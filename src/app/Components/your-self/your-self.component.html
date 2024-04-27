@@ -1,0 +1,24 @@
+<!-- user-form.component.html -->
+<div class="form-container">
+  <div class="form-fields">
+    <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+      <!-- Name -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" pInputText />
+
+      <!-- Mobile Number -->
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" formControlName="mobile" pInputText />
+
+      <!-- GitHub link -->
+      <label for="github">GitHub link:</label>
+      <input type="url" id="github" formControlName="github" pInputText />
+
+      <!-- LinkedIn link -->
+      <label for="linkedin">LinkedIn link:</label>
+      <input type="url" id="linkedin" formControlName="linkedin" pInputText />
+
+      <button type="submit" pButton label="Submit"></button>
+    </form>
+  </div>
+</div>
