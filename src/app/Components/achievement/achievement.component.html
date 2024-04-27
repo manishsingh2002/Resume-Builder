@@ -1,1 +1,108 @@
-<p>achievement works!</p>
+<p>Achievements works!</p>
+<p></p>
+<form>
+  <h1
+    style="
+      background-color: rgb(226, 192, 78);
+      font-weight: 800;
+      font-style: oblique;
+      border-radius: 25px;
+    "
+  >
+    Achievements or Certification
+  </h1>
+  <div class="col-12" [formGroup]="UserInfo" (ngSubmit)="userdetail()">
+    <div class="card">
+      <div class="p-fluid p-formgrid grid">
+        <span
+          *ngIf="
+            CertificateName &&
+            CertificateName.invalid &&
+            CertificateName.touched
+          "
+          >please enter the valid Certificate name</span
+        >
+        <div class="field col-12 md:col-6">
+          <!-- <label htmlFor="firstname2">User Name</label> -->
+          <input
+            pInputText
+            id="Name"
+            type="text"
+            placeholder="CertificateName"
+            type="text"
+            formControlName="CertificateName"
+          />
+        </div>
+        <!-- Email -->
+
+        <!--  Address-->
+        <span
+          *ngIf="
+            CertificateLink &&
+            CertificateLink.invalid &&
+            CertificateLink.touched
+          "
+          >please enter the valid CertificateLink</span
+        >
+        <div class="field col-12">
+          <!-- <label htmlFor="address">Address</label> -->
+          <input
+            pInputTextarea
+            id="address"
+            rows="4"
+            placeholder="CertificateLink"
+            type="text"
+            formControlName="CertificateLink"
+          />
+        </div>
+        <!-- City -->
+
+        <!--  -->
+        <div class="button">
+          <a
+            style="
+              margin-top: 10px;
+              background-color: #28a745;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              padding: 12px 20px;
+              cursor: pointer;
+              font-size: 16px;
+              transition: background-color 0.3s ease;
+            "
+            label="Success"
+            type="p-button"
+            severity="success"
+            label="submit"
+            class="p-button-success"
+            routerLink="/project"
+            (click)="userdetail()"
+            >Previous</a
+          >
+          <a
+            style="
+              margin-top: 10px;
+              background-color: #28a745;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              padding: 12px 20px;
+              cursor: pointer;
+              font-size: 16px;
+              transition: background-color 0.3s ease;
+            "
+            label="Success"
+            severity="success"
+            label="submit"
+            class="p-button-success"
+            routerLink="/skills"
+            (click)="userdetail()"
+            >Next</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- <router-outlet></router-outlet> -->

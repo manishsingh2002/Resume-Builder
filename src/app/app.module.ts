@@ -13,6 +13,10 @@ import { EducationComponent } from './Components/education/education.component';
 import { AchievementComponent } from './Components/achievement/achievement.component';
 import { SkillsComponent } from './Components/skills/skills.component';
 import { TonguleLanguageComponent } from './Components/tongule-language/tongule-language.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ProjectsComponent } from './Components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +28,17 @@ import { TonguleLanguageComponent } from './Components/tongule-language/tongule-
     AchievementComponent,
     SkillsComponent,
     TonguleLanguageComponent,
+    ProjectsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    InputTextareaModule,
+    ButtonModule,
+    BrowserModule,
+    InputTextModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })

@@ -1,4 +1,5 @@
-<p>professional-experience works!</p>
+<p>projects works!</p>
+<p>education works!</p>
 <form>
   <h1
     style="
@@ -8,13 +9,13 @@
       border-radius: 25px;
     "
   >
-    Professional Experience
+    Projects
   </h1>
   <div class="col-12" [formGroup]="UserInfo" (ngSubmit)="userdetail()">
     <div class="card">
       <div class="p-fluid p-formgrid grid">
-        <span *ngIf="CompanyName && CompanyName.invalid && CompanyName.touched"
-          >please enter the valid Company name</span
+        <span *ngIf="ProjectName && ProjectName.invalid && ProjectName.touched"
+          >please enter the valid College name</span
         >
         <div class="field col-12 md:col-6">
           <!-- <label htmlFor="firstname2">User Name</label> -->
@@ -22,68 +23,56 @@
             pInputText
             id="Name"
             type="text"
-            placeholder="CompanyName"
+            placeholder="ProjectName"
             type="text"
-            formControlName="CompanyName"
+            formControlName="ProjectName"
           />
         </div>
         <!-- Email -->
-        <span *ngIf="Position && Position.invalid && Position.touched"
-          >please enter the valid Position on work</span
+        <span
+          *ngIf="ProjectStack && ProjectStack.invalid && ProjectStack.touched"
+          >please enter the valid Project stack</span
         >
         <div class="field col-12 md:col-6">
           <!-- <label htmlFor="lastname2">Email</label> -->
           <input
             pInputText
-            id="Position"
+            id="Degree"
             type="text"
-            placeholder="Position in project"
-            formControlName="Position"
+            placeholder="ProjectStack "
+            formControlName="ProjectStack"
           />
         </div>
         <!--  Address-->
-        <span *ngIf="location && location.invalid && location.touched"
-          >please enter the valid location
-        </span>
+        <span *ngIf="ProjectLink && ProjectLink.invalid && ProjectLink.touched"
+          >please enter the valid ProjectLink</span
+        >
         <div class="field col-12">
           <!-- <label htmlFor="address">Address</label> -->
           <input
             pInputTextarea
             id="address"
             rows="4"
-            placeholder="location"
+            placeholder="ProjectLink"
             type="text"
-            formControlName="location"
+            formControlName="ProjectLink"
           />
         </div>
         <!-- City -->
-        <span *ngIf="months && months.invalid && months.touched"
-          >please enter the valid Months like 2 months or year in text 2months
-          ,2years</span
-        >
+        <span>please Description separatted by semicolon ; </span>
         <div class="field col-12 md:col-6">
           <!-- <label htmlFor="city">City</label> -->
           <input
             pInputText
             id="city"
             type="text"
-            placeholder="months"
+            placeholder="Description"
             type="text"
-            formControlName="months"
+            formControlName="Description"
           />
         </div>
         <!-- zip code  -->
-        <div class="field col-12 md:col-3">
-          <textarea
-            rows="5"
-            cols="30"
-            pInputTextarea
-            placeholder="Explain Yourself about your projects and experience"
-            type="text"
-            formControlName="aboutproject"
-            class="ng-invalid ng-dirty"
-          ></textarea>
-        </div>
+
         <!--  -->
 
         <div class="button">
@@ -104,7 +93,7 @@
             severity="success"
             label="submit"
             class="p-button-success"
-            routerLink="/yourself"
+            routerLink="/education"
             (click)="userdetail()"
             >Previous</a
           >
@@ -124,7 +113,7 @@
             severity="success"
             label="submit"
             class="p-button-success"
-            routerLink="/education"
+            routerLink="/achievement"
             (click)="userdetail()"
             >Next</a
           >

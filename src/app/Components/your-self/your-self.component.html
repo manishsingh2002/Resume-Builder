@@ -1,24 +1,134 @@
-<!-- user-form.component.html -->
-<div class="form-container">
-  <div class="form-fields">
-    <form [formGroup]="userForm" (ngSubmit)="submitForm()">
-      <!-- Name -->
-      <label for="name">Name:</label>
-      <input type="text" id="name" formControlName="name" pInputText />
-
-      <!-- Mobile Number -->
-      <label for="mobile">Mobile Number:</label>
-      <input type="tel" id="mobile" formControlName="mobile" pInputText />
-
-      <!-- GitHub link -->
-      <label for="github">GitHub link:</label>
-      <input type="url" id="github" formControlName="github" pInputText />
-
-      <!-- LinkedIn link -->
-      <label for="linkedin">LinkedIn link:</label>
-      <input type="url" id="linkedin" formControlName="linkedin" pInputText />
-
-      <button type="submit" pButton label="Submit"></button>
-    </form>
+<form>
+  <h1
+    style="
+      background-color: rgb(226, 192, 78);
+      font-weight: 800;
+      border-radius: 25px;
+      font-style: oblique;
+    "
+  >
+    About You
+  </h1>
+  <div class="col-12" [formGroup]="UserInfo" (ngSubmit)="userdetail()">
+    <div class="card">
+      <div class="p-fluid p-formgrid grid">
+        <span *ngIf="username && username.invalid && username.touched"
+          >please enter the valid name</span
+        >
+        <div class="field col-12 md:col-6">
+          <!-- <label htmlFor="firstname2">User Name</label> -->
+          <input
+            pInputText
+            id="Name"
+            type="text"
+            placeholder="Name"
+            type="text"
+            formControlName="Name"
+          />
+        </div>
+        <!-- Email -->
+        <span *ngIf="email && email.invalid && email.touched"
+          >please enter the valid Email</span
+        >
+        <div class="field col-12 md:col-6">
+          <!-- <label htmlFor="lastname2">Email</label> -->
+          <input
+            pInputText
+            id="Email"
+            type="text"
+            placeholder="email"
+            formControlName="email"
+          />
+        </div>
+        <!--  Address-->
+        <span *ngIf="Linkdelin && Linkdelin.invalid && Linkdelin.touched"
+          >please enter the valid Linkedlin</span
+        >
+        <div class="field col-12">
+          <!-- <label htmlFor="address">Address</label> -->
+          <input
+            pInputTextarea
+            id="address"
+            rows="4"
+            placeholder="Linkedlin"
+            type="text"
+            formControlName="Linkdelin"
+          />
+        </div>
+        <!-- City -->
+        <span *ngIf="Github && Github.invalid && Github.touched"
+          >please enter the valid github</span
+        >
+        <div class="field col-12 md:col-6">
+          <!-- <label htmlFor="city">City</label> -->
+          <input
+            pInputText
+            id="city"
+            type="text"
+            placeholder="Github"
+            type="text"
+            formControlName="Github"
+          />
+        </div>
+        <!-- zip code  -->
+        <div class="field col-12 md:col-3">
+          <textarea
+            rows="5"
+            cols="30"
+            pInputTextarea
+            placeholder="Explain Yourself about your projects and experience"
+            type="text"
+            formControlName="Aboutu"
+            class="ng-invalid ng-dirty"
+          ></textarea>
+        </div>
+        <!--  -->
+        <div class="button">
+          <a
+            style="
+              margin-top: 10px;
+              background-color: #28a745;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              padding: 12px 20px;
+              cursor: pointer;
+              font-size: 16px;
+              transition: background-color 0.3s ease;
+            "
+            label="Success"
+            type="p-button"
+            severity="success"
+            label="submit"
+            class="p-button-success"
+            routerLink="/"
+            (click)="userdetail()"
+            >Previous</a
+          >
+          <a
+            style="
+              margin-top: 10px;
+              background-color: #28a745;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              padding: 12px 20px;
+              cursor: pointer;
+              font-size: 16px;
+              transition: background-color 0.3s ease;
+            "
+            label="Success"
+            type="p-button"
+            severity="success"
+            label="submit"
+            class="p-button-success"
+            routerLink="/professionalexperience"
+            (click)="userdetail()"
+            >Next</a
+          >
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</form>
+<!-- <router-outlet></router-outlet> -->

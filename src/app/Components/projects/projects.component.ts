@@ -2,20 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-education',
-  templateUrl: './education.component.html',
-  styleUrl: './education.component.css',
+  selector: 'app-projects',
+  templateUrl: './projects.component.html',
+  styleUrl: './projects.component.css',
 })
-export class EducationComponent implements OnInit {
+export class ProjectsComponent implements OnInit {
   public formdata: any;
   shippeddata: any;
   finalvalue: any;
   public valueChangesSubscription: any;
   UserInfo = new FormGroup({
-    CollegeName: new FormControl('', [Validators.required]),
-    DegreeName: new FormControl('', [Validators.required]),
-    CGPA: new FormControl('', [Validators.required]),
-    months: new FormControl('', [Validators.required]),
+    ProjectName: new FormControl('', [Validators.required]),
+    ProjectStack: new FormControl('', [Validators.required]),
+    ProjectLink: new FormControl('', [Validators.required]),
+    Description: new FormControl('', [Validators.required]),
   });
   userdetail() {
     console.log(this.UserInfo.value);
@@ -26,16 +26,16 @@ export class EducationComponent implements OnInit {
     console.log(this.formdata);
   }
   //
-  get CollegeName() {
+  get ProjectName() {
     return this.UserInfo.get('CompanyName');
   }
-  get DegreeName() {
+  get ProjectStack() {
     return this.UserInfo.get('email');
   }
-  get CGPA() {
+  get ProjectLink() {
     return this.UserInfo.get('Linkdelin');
   }
-  get months() {
+  get Description() {
     return this.UserInfo.get('Github');
   }
 }
